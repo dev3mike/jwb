@@ -1,0 +1,98 @@
+import { useState } from "react";
+import { Card, CardContent, CardTitle } from "@/components/ui/card";
+import BlurFade from "@/components/ui/blur-fade";
+import { ArrowUpRight, ChevronLeft, ChevronRight } from "lucide-react";
+import { useData } from "@/hooks/useData";
+import { Link } from "react-router-dom";
+import { Button } from "@/components/ui/button";
+
+const PROJECTS_PER_PAGE = 5;
+
+export function ProjectsPage() {
+  const data = useData();
+  const allProjects = [...data.projects.featured, ...data.projects.list];
+  const [currentPage, setCurrentPage] = useState(1);
+
+  const totalPages = Math.ceil(allProjects.length / PROJECTS_PER_PAGE);
+  const startIndex = (currentPage - 1) * PROJECTS_PER_PAGE;
+  const endIndex = startIndex + PROJECTS_PER_PAGE;
+  const currentProjects = allProjects.slice(startIndex, endIndex);
+
+  return (
+    <BlurFade delay={0.2}>
+      <Card>
+        <CardTitle>All Projects</CardTitle>
+        <CardContent className="p-4 space-y-4">
+          {currentProjects.map((project, i) => (
+            <div key={i} className="flex gap-4 border rounded-md p-4">
+              <div className="flex-1">
+                <div>
+                  <Link to={`/projects/${project.slug}`}>
+                    <h2 className="text-lg font-bold hover:text-orange-500 text-white truncate">
+                      {project.name}
+                    </h2>
+                  </Link>
+                  <p className="text-sm text-muted-foreground line-clamp-4">
+                    {project.description}
+                  </p>
+                  <div className="flex gap-2 mt-4">
+                    {project.link_url && (
+                      <a
+                        href={project.link_url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex items-center gap-2 text-sm text-muted-foreground hover:text-orange-500 dark:hover:text-orange-500"
+                      >
+                        Visit Live
+                        <ArrowUpRight className="h-4 w-4" />
+                      </a>
+                    )}
+                    <Link
+                      to={`/projects/${project.slug}`}
+                      className="flex items-center gap-2 text-sm text-muted-foreground hover:text-orange-500 dark:hover:text-orange-500"
+                    >
+                      View Details
+                      <ArrowUpRight className="h-4 w-4" />
+                    </Link>
+                  </div>
+                </div>
+              </div>
+              {project.image && (
+                <img
+                  src={project.image}
+                  alt={project.name}
+                  className="rounded-md w-[200px] h-[120px] object-cover"
+                />
+              )}
+            </div>
+          ))}
+
+          {/* Pagination */}
+          <div className="flex justify-center items-center gap-4 pt-4">
+            <Button
+              variant="ghost"
+              size="icon"
+              onClick={() => setCurrentPage((prev) => Math.max(prev - 1, 1))}
+              disabled={currentPage === 1}
+            >
+              <ChevronLeft className="h-4 w-4" />
+            </Button>
+            <span className="text-sm text-muted-foreground">
+              Page {currentPage} of {Math.max(totalPages, 1)}
+            </span>
+            <Button
+              variant="ghost"
+              size="icon"
+              onClick={() =>
+                setCurrentPage((prev) => Math.min(prev + 1, totalPages))
+              }
+              disabled={currentPage === totalPages || totalPages === 0}
+            >
+              <ChevronRight className="h-4 w-4" />
+            </Button>
+          </div>
+        </CardContent>
+      </Card>
+    </BlurFade>
+  );
+}
