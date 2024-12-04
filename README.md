@@ -1,5 +1,7 @@
 # JSON Web Builder (JWB)
 
+![JSON Web Builder](./demo-preview.jpg)
+
 Create your professional portfolio website in minutes by just updating JSON files! No coding required! 🚀
 
 ## What is JSON Web Builder?
