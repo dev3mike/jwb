@@ -98,4 +98,4 @@ If you find any issues or have suggestions, please open an issue in the GitHub r
 
 ---
 
-[❤️ Innovative Bytes by Masoud](https://masoudb.com)
+❤️ Innovative Bytes by [Masoud](https://masoudb.com)
