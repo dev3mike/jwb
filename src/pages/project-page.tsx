@@ -3,10 +3,13 @@ import { Card, CardContent, CardTitle } from "@/components/ui/card";
 import BlurFade from "@/components/ui/blur-fade";
 import { useData } from "@/hooks/useData";
 import { ArrowLeft, ArrowUpRight } from "lucide-react";
+import { useMobile } from "@/hooks/useMobile";
+import { cn } from "@/lib/utils";
 
 export function ProjectPage() {
   const { slug } = useParams();
   const data = useData();
+  const isMobile = useMobile();
   const allProjects = [...data.projects.featured, ...data.projects.list];
   const project = allProjects.find((p) => p.slug === slug);
 
@@ -39,17 +42,24 @@ export function ProjectPage() {
             ))}
           </div>
           {project.image && (
-            <img
-              src={project.image}
-              alt={project.name}
-              className="rounded-lg aspect-ratio"
-            />
+            <div>
+              <img
+                src={project.image}
+                alt={project.name}
+                className="rounded-lg w-full"
+              />
+            </div>
           )}
 
           <div className="space-y-4">
             <div dangerouslySetInnerHTML={{ __html: project.description }} />
 
-            <div className="flex flex-wrap gap-8 text-sm">
+            <div
+              className={cn(
+                "flex flex-wrap gap-8 text-sm",
+                isMobile && "flex-col gap-0"
+              )}
+            >
               {project.link_url && (
                 <a
                   href={project.link_url}

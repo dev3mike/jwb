@@ -5,11 +5,13 @@ import { ArrowUpRight, ChevronLeft, ChevronRight } from "lucide-react";
 import { useData } from "@/hooks/useData";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
+import { useMobile } from "@/hooks/useMobile";
 
 const PROJECTS_PER_PAGE = 5;
 
 export function ProjectsPage() {
   const data = useData();
+  const isMobile = useMobile();
   const allProjects = [...data.projects.featured, ...data.projects.list];
   const [currentPage, setCurrentPage] = useState(1);
 
@@ -46,7 +48,7 @@ export function ProjectsPage() {
                   </div>
                 </div>
               </div>
-              {project.image && (
+              {project.image && !isMobile && (
                 <img
                   src={project.image}
                   alt={project.name}

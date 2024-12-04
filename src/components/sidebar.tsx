@@ -11,7 +11,7 @@ export function Sidebar() {
   const statusTheme = getStatusThemeClassnames(data.profile.status_theme);
 
   return (
-    <div className="hidden md:block">
+    <div>
       <div className="sticky top-8 space-y-2">
         <div className="text-left">
           <BlurFade delay={0.25}>
@@ -27,7 +27,7 @@ export function Sidebar() {
               {data.profile.title}
             </p>
 
-            <div className="mt-2 mb-6 flex items-center gap-4">
+            <div className="mt-2 mb-6 flex flex-wrap items-center gap-4">
               <span
                 className={cn(
                   "px-2 py-1 inline-flex items-center rounded-full text-xs",

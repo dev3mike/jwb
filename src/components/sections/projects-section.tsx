@@ -4,9 +4,12 @@ import { Card, CardContent, CardTitle } from "@/components/ui/card";
 import { SectionMoreButton } from "@/components/section-more-button";
 import { Slider } from "@/components/slider";
 import { useData } from "@/hooks/useData";
+import { useMobile } from "@/hooks/useMobile";
+import { cn } from "@/lib/utils";
 
 export function ProjectsSection() {
   const data = useData();
+  const isMobile = useMobile();
 
   if (!data.projects.show_projects_section_in_homepage) {
     return null;
@@ -46,22 +49,29 @@ export function ProjectsSection() {
                     </Link>
                   </div>
                 </div>
-                <img
-                  src={project.image}
-                  alt="Project"
-                  className="rounded-md max-w-[200px]"
-                />
+                {!isMobile && (
+                  <div>
+                    <img
+                      src={project.image}
+                      alt="Project"
+                      className="rounded-md w-[200px] max-h-[180px]"
+                    />
+                  </div>
+                )}
               </div>
             ))}
           </div>
           <Slider
-            perView={3}
+            perView={isMobile ? 1 : 3}
             spacing={10}
             className="h-[100px]"
             items={data.projects.list.map((project, i) => (
               <div
                 key={i}
-                className="border rounded-md p-4 w-[220px] h-[100px]"
+                className={cn(
+                  "border rounded-md p-4 w-[220px] h-[100px]",
+                  isMobile && "w-full"
+                )}
               >
                 <Link
                   to={`/projects/${project.slug}`}

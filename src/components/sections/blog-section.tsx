@@ -1,9 +1,11 @@
 import { Card, CardContent, CardTitle } from "@/components/ui/card";
 import { SectionMoreButton } from "@/components/section-more-button";
 import { useData } from "@/hooks/useData";
+import { useMobile } from "@/hooks/useMobile";
 
 export function BlogSection() {
   const data = useData();
+  const isMobile = useMobile();
 
   if (!data.blog.show_blog_section_in_homepage) {
     return null;
@@ -37,11 +39,15 @@ export function BlogSection() {
                       <span>{post.date}</span>
                     </div>
                   </div>
-                  <img
-                    src={post.image}
-                    alt={post.title}
-                    className="rounded-md w-[120px] h-[80px] object-cover"
-                  />
+                  {!isMobile && (
+                    <div>
+                      <img
+                        src={post.image}
+                        alt={post.title}
+                        className="rounded-md w-[120px] max-h-[150px]"
+                      />
+                    </div>
+                  )}
                 </div>
               ))}
             </div>

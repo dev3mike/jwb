@@ -5,6 +5,8 @@ import { profile } from "./data/profile";
 import { projects } from "./data/projects";
 import { socialLinks } from "./data/social-links";
 import { workExperiences } from "./data/work-experiences";
+import { customPages } from "./data/custom-pages";
+
 export const data = {
   profile,
   navigation,
@@ -19,4 +21,5 @@ export const data = {
   about: {
     description: profile.about,
   },
+  customPages,
 };
