@@ -98,4 +98,4 @@ If you find any issues or have suggestions, please open an issue in the GitHub r
 
 ---
 
-Made with ❤️ by the JSON Web Builder team
+[❤️ Innovative Bytes by Masoud](https://masoudb.com)
