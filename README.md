@@ -27,9 +27,11 @@ JSON Web Builder is an open-source project that lets you create a beautiful, mod
 - 🎭 Animated transitions
 - 🔧 Built with TailwindCSS and ShadCN for beautiful UI
 
-## Quick Start
+## Create your own portfolio
 
-**To create your own portfolio, click on the "Use this template" button above or follow these steps:**
+**To create your own portfolio, click on the "Use this template" button above**
+
+## Run locally & build for production
 
 1. Clone the repository:
 
