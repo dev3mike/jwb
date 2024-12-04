@@ -4,6 +4,7 @@ import BlurFade from "@/components/ui/blur-fade";
 import { useData } from "@/hooks/useData";
 import { Button } from "@/components/ui/button";
 import { ChevronLeft, ChevronRight } from "lucide-react";
+import { Helmet } from "react-helmet";
 
 const POSTS_PER_PAGE = 20;
 
@@ -18,6 +19,14 @@ export function BlogPage() {
 
   return (
     <BlurFade delay={0.2}>
+      <Helmet>
+        <meta charSet="utf-8" />
+        <title>{data.profile.name} | Blog</title>
+        <meta
+          name="description"
+          content={`Read ${data.profile.name}'s blog posts`}
+        />
+      </Helmet>
       <Card>
         <CardTitle>Blog Posts</CardTitle>
         <CardContent className="p-4 space-y-6">

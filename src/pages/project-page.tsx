@@ -5,6 +5,7 @@ import { useData } from "@/hooks/useData";
 import { ArrowLeft, ArrowUpRight } from "lucide-react";
 import { useMobile } from "@/hooks/useMobile";
 import { cn } from "@/lib/utils";
+import { Helmet } from "react-helmet";
 
 export function ProjectPage() {
   const { slug } = useParams();
@@ -19,6 +20,13 @@ export function ProjectPage() {
 
   return (
     <BlurFade delay={0.2}>
+      <Helmet>
+        <meta charSet="utf-8" />
+        <title>
+          {project.name} | {data.profile.name}
+        </title>
+        <meta name="description" content={`My Projects | ${project.name}`} />
+      </Helmet>
       <Card>
         <CardTitle>
           <Link

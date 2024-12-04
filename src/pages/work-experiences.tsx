@@ -2,12 +2,21 @@ import { Card, CardContent, CardTitle } from "@/components/ui/card";
 import { ArrowUpRight, MapPin } from "lucide-react";
 import { useData } from "@/hooks/useData";
 import BlurFade from "@/components/ui/blur-fade";
+import { Helmet } from "react-helmet";
 
 export function WorkExperiencesPage() {
   const data = useData();
 
   return (
     <BlurFade delay={0.2}>
+      <Helmet>
+        <meta charSet="utf-8" />
+        <title>{data.profile.name} | Work Experiences</title>
+        <meta
+          name="description"
+          content={`Check out ${data.profile.name}'s work experiences`}
+        />
+      </Helmet>
       <div className="space-y-6">
         <section>
           <Card>

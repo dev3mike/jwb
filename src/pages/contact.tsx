@@ -2,6 +2,7 @@ import BlurFade from "@/components/ui/blur-fade";
 import { Card, CardContent, CardTitle } from "@/components/ui/card";
 import { useData } from "@/hooks/useData";
 import { allSupportedPlatforms } from "@/lib/social-links-helper";
+import { Helmet } from "react-helmet";
 import { Link } from "react-router-dom";
 import { Fragment } from "react/jsx-runtime";
 
@@ -13,6 +14,14 @@ export function ContactPage() {
 
   return (
     <BlurFade delay={0.2}>
+      <Helmet>
+        <meta charSet="utf-8" />
+        <title>{data.profile.name} | Contact</title>
+        <meta
+          name="description"
+          content={`Do you want to get in touch with ${data.profile.name}?`}
+        />
+      </Helmet>
       <div className="space-y-8">
         <Card>
           <CardTitle>Get in Touch</CardTitle>

@@ -6,6 +6,7 @@ import { useData } from "@/hooks/useData";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { useMobile } from "@/hooks/useMobile";
+import { Helmet } from "react-helmet";
 
 const PROJECTS_PER_PAGE = 5;
 
@@ -22,6 +23,14 @@ export function ProjectsPage() {
 
   return (
     <BlurFade delay={0.2}>
+      <Helmet>
+        <meta charSet="utf-8" />
+        <title>{data.profile.name} | Projects</title>
+        <meta
+          name="description"
+          content={`Check out ${data.profile.name}'s projects`}
+        />
+      </Helmet>
       <Card>
         <CardTitle>All Projects</CardTitle>
         <CardContent className="p-4 space-y-4">
