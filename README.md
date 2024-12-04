@@ -90,7 +90,13 @@ Contributions are welcome! Feel free to:
 
 ## License
 
-This project is open source and available under the MIT License.
+This project is licensed under the MIT License with attribution requirements. This means you are free to use, modify, and distribute the project, provided that you:
+
+1. Include the original license and copyright notice
+2. Provide appropriate credit to [JWB](https://github.com/dev3mike/jwb)
+3. Include a link to the original repository
+
+See the [LICENSE](./LICENSE) file for full details.
 
 ## Support
 
