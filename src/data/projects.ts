@@ -9,6 +9,10 @@
  *
  * IMPORTANT: either add a project to featured or list, not both
  * IMPORTANT: you can use html in the description
+ *
+ * You can have up to 3 links for each project
+ * Set the link url to null if you don't want to show it
+ *
  */
 export const projects = {
   /**
