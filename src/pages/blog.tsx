@@ -21,8 +21,8 @@ export function BlogPage() {
       <Card>
         <CardTitle>Blog Posts</CardTitle>
         <CardContent className="p-4 space-y-6">
-          {currentPosts.map((post) => (
-            <div key={post.slug} className="flex gap-4 border rounded-md p-4">
+          {currentPosts.map((post, index) => (
+            <div key={index} className="flex gap-4 border rounded-md p-4">
               <div className="flex-1">
                 <h2 className="text-lg font-bold hover:text-orange-500 dark:hover:text-orange-500">
                   <a

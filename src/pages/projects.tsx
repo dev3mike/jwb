@@ -35,21 +35,10 @@ export function ProjectsPage() {
                   <p className="text-sm text-muted-foreground line-clamp-4">
                     {project.description}
                   </p>
-                  <div className="flex gap-2 mt-4">
-                    {project.link_url && (
-                      <a
-                        href={project.link_url}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="flex items-center gap-2 text-sm text-muted-foreground hover:text-orange-500 dark:hover:text-orange-500"
-                      >
-                        Visit Live
-                        <ArrowUpRight className="h-4 w-4" />
-                      </a>
-                    )}
+                  <div className="flex gap-6 mt-4">
                     <Link
                       to={`/projects/${project.slug}`}
-                      className="flex items-center gap-2 text-sm text-muted-foreground hover:text-orange-500 dark:hover:text-orange-500"
+                      className="flex items-center gap-1 text-sm text-muted-foreground hover:text-orange-500 dark:hover:text-orange-500"
                     >
                       View Details
                       <ArrowUpRight className="h-4 w-4" />

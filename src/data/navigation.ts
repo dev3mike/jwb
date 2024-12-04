@@ -37,5 +37,12 @@ export const navigation = {
       title: "Contact",
       url: "/contact",
     },
+    /**
+     * You can add the resume pdf file in the public folder and add the link here
+     */
+    // {
+    //   title: "Download My Resume",
+    //   url: "/resume.pdf",
+    // },
   ],
 };

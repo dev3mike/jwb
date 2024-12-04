@@ -5,7 +5,6 @@ import { HomePage } from "@/pages/home";
 import { ContactPage } from "@/pages/contact";
 import { ProjectsPage } from "@/pages/projects";
 import { BlogPage } from "@/pages/blog";
-import { BlogPostPage } from "@/pages/blog-post";
 import "./App.css";
 import { ProjectPage } from "./pages/project_page";
 import { WorkExperiencesPage } from "./pages/work-experiences";

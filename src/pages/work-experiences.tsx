@@ -16,7 +16,7 @@ export function WorkExperiencesPage() {
               <div className="relative space-y-3 ml-5">
                 <div className="absolute left-[5px] top-[12px] bottom-[40px] w-[2px] bg-orange-500/20 dark:bg-orange-500/20" />
 
-                {data.workExperience.map((experience, index) => (
+                {data.workExperiences.map((experience, index) => (
                   <div key={index} className="relative pb-8 pl-8">
                     <div className="absolute left-[0px] top-[12px] h-[10px] w-[10px] rounded-full bg-orange-500 ring-[4px] ring-orange-500/20" />
 

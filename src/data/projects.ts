@@ -8,6 +8,7 @@
  * example: this-is-an-example-of-slug-in-lower-case
  *
  * IMPORTANT: either add a project to featured or list, not both
+ * IMPORTANT: you can use html in the description
  */
 export const projects = {
   /**
@@ -22,7 +23,8 @@ export const projects = {
     {
       name: "Project Name",
       slug: "project-name",
-      description: "Description Long Long Long Long Long Long Long Long Long",
+      description:
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
       image:
         "https://files.4d.nu/9b4885c5-2acf-4ac7-ba35-790ba23a5ab7_256.webp",
       link_url: "https://www.google.com",
@@ -45,7 +47,7 @@ export const projects = {
       name: "AI-Powered Chatbot",
       slug: "ai-powered-chatbot",
       description:
-        "A chatbot application that utilizes AI to provide instant responses and support to users.",
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
       image: null,
       link_url: "https://www.example.com/chatbot",
       link_text: "View Project",
@@ -61,7 +63,7 @@ export const projects = {
       name: "E-commerce Platform",
       slug: "e-commerce-platform",
       description:
-        "A full-featured e-commerce platform that allows users to buy and sell products online.",
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
       image: null,
       link_url: "https://www.example.com/ecommerce",
       link_text: "View Project",
@@ -77,7 +79,7 @@ export const projects = {
       name: "Personal Finance Tracker",
       slug: "personal-finance-tracker",
       description:
-        "An application designed to help users manage their finances and track their spending habits.",
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
       image: null,
       link_url: "https://www.example.com/finance-tracker",
       link_text: "View Project",
@@ -93,7 +95,7 @@ export const projects = {
       name: "Social Media Dashboard",
       slug: "social-media-dashboard",
       description:
-        "A dashboard that aggregates social media feeds and analytics for easy management and insights.",
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
       image: null,
       link_url: "https://www.example.com/social-media-dashboard",
       link_text: "View Project",

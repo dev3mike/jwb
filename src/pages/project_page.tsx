@@ -55,7 +55,7 @@ export function ProjectPage() {
                   href={project.link_url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 mt-4 text-primary hover:text-orange-500"
+                  className="inline-flex items-center gap-1 mt-4 text-orange-500 hover:text-orange-500"
                 >
                   {project.link_text}
                   <ArrowUpRight className="w-4 h-4" />
@@ -66,7 +66,7 @@ export function ProjectPage() {
                   href={project.link2_url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 mt-4 text-primary hover:text-orange-500"
+                  className="inline-flex items-center gap-1 mt-4 text-orange-500 hover:text-orange-500"
                 >
                   {project.link2_text}
                   <ArrowUpRight className="w-4 h-4" />
@@ -77,7 +77,7 @@ export function ProjectPage() {
                   href={project.link3_url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 mt-4 text-primary hover:text-orange-500"
+                  className="inline-flex items-center gap-1 mt-4 text-orange-500 hover:text-orange-500"
                 >
                   {project.link3_text}
                   <ArrowUpRight className="w-4 h-4" />
@@ -86,7 +86,7 @@ export function ProjectPage() {
             </div>
 
             {project.youtube_url && (
-              <div className="aspect-video pt-8">
+              <div className="aspect-video p-2 rounded-lg overflow-hidden bg-black">
                 <iframe
                   src={`https://www.youtube.com/embed/${
                     project.youtube_url.split("v=")[1]
