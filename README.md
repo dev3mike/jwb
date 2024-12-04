@@ -29,6 +29,8 @@ JSON Web Builder is an open-source project that lets you create a beautiful, mod
 
 ## Quick Start
 
+**To create your own portfolio, click on the "Use this template" button above or follow these steps:**
+
 1. Clone the repository:
 
 ```bash
