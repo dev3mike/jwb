@@ -13,6 +13,8 @@
  * You can have up to 3 links for each project
  * Set the link url to null if you don't want to show it
  *
+ * If the projects will be more than 20 then the pagination will be enabled
+ *
  */
 export const projects = {
   /**

@@ -1,5 +1,9 @@
 /**
  * Blog data
+ * Set image to null if you don't want to show it
+ *
+ * If the number of posts will be more than 20 then the pagination will be enabled
+ *
  */
 export const blog = {
   /**
