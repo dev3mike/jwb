@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { MapPin } from "lucide-react";
 import { cn, getStatusThemeClassnames } from "@/lib/utils";
 import { allSupportedPlatformsGrayScaleFast } from "@/lib/social-links-helper";
@@ -7,6 +7,7 @@ import { useData } from "@/hooks/useData";
 
 export function Sidebar() {
   const data = useData();
+  const location = useLocation();
   const statusTheme = getStatusThemeClassnames(data.profile.status_theme);
 
   return (
@@ -55,19 +56,25 @@ export function Sidebar() {
               {data.profile.bio}
             </p>
             <nav className="flex flex-col">
-              {data.navigation.links.map((link) => (
-                <Link
-                  key={link.url}
-                  to={link.url.toLowerCase()}
-                  target={link.url.startsWith("http") ? "_blank" : "_self"}
-                  className="text-muted-foreground underline-offset-4 hover:bg-accent hover:text-accent-foreground rounded-md text-md transition-colors py-1"
-                >
-                  <span className="text-muted-foreground opacity-30 mr-1">
-                    -
-                  </span>
-                  {link.title}
-                </Link>
-              ))}
+              {data.navigation.links.map((link) => {
+                const isActive = location.pathname === link.url.toLowerCase();
+                return (
+                  <Link
+                    key={link.url}
+                    to={link.url.toLowerCase()}
+                    target={link.url.startsWith("http") ? "_blank" : "_self"}
+                    className={cn(
+                      "text-muted-foreground underline-offset-4 hover:bg-accent hover:text-accent-foreground rounded-md text-md transition-colors py-1",
+                      isActive && "text-orange-500 font-medium"
+                    )}
+                  >
+                    <span className="text-muted-foreground opacity-30 mr-1">
+                      -
+                    </span>
+                    {link.title}
+                  </Link>
+                );
+              })}
             </nav>
           </div>
           <div className="pt-10 grid grid-cols-11 gap-1">

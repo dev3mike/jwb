@@ -31,14 +31,17 @@ export function ProjectsSection() {
                         {project.name}
                       </Link>
                     </h2>
-                    <p className="text-sm text-muted-foreground line-clamp-4">
-                      {project.description}
-                    </p>
+                    <p
+                      className="text-sm text-muted-foreground line-clamp-4"
+                      dangerouslySetInnerHTML={{
+                        __html: project.description,
+                      }}
+                    />
                     <Link
                       to={`/projects/${project.slug}`}
                       className="flex items-center gap-2 text-sm text-muted-foreground dark:hover:text-orange-500 mt-4"
                     >
-                      {project.link_text}
+                      View Details
                       <ArrowUpRight className="h-4 w-4" />
                     </Link>
                   </div>
@@ -56,16 +59,22 @@ export function ProjectsSection() {
             spacing={10}
             className="h-[100px]"
             items={data.projects.list.map((project, i) => (
-              <div key={i} className="border rounded-md p-4 w-[220px] h-[100px]">
+              <div
+                key={i}
+                className="border rounded-md p-4 w-[220px] h-[100px]"
+              >
                 <Link
                   to={`/projects/${project.slug}`}
                   className="hover:text-orange-500 text-white"
                 >
                   <h3 className="text-md truncate">{project.name}</h3>
                 </Link>
-                <p className="text-xs text-muted-foreground line-clamp-2">
-                  {project.description}
-                </p>
+                <p
+                  className="text-xs text-muted-foreground line-clamp-2"
+                  dangerouslySetInnerHTML={{
+                    __html: project.description,
+                  }}
+                />
               </div>
             ))}
           />
