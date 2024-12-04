@@ -10,7 +10,11 @@ export function AboutSection() {
       <Card>
         <CardTitle>About Me</CardTitle>
         <CardContent className="p-4">
-          <div>{data.about.description}</div>
+          <div
+            dangerouslySetInnerHTML={{
+              __html: data.about.description,
+            }}
+          />
           <div id="top-skills" className="border rounded-md p-4 mt-6">
             <h2 className="flex items-center gap-2 text-sm dark:text-orange-500 mb-2">
               <Gem className="h-4 w-4" />

@@ -25,8 +25,7 @@ export const projects = {
       slug: "project-name",
       description:
         "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-      image:
-        "https://files.4d.nu/9b4885c5-2acf-4ac7-ba35-790ba23a5ab7_256.webp",
+      image: "https://placehold.co/686x343/000000/FFFFFF/png?text=Hello+World",
       link_url: "https://www.google.com",
       link_text: "View Website",
       link2_url:

@@ -42,7 +42,7 @@ export function ProjectPage() {
             <img
               src={project.image}
               alt={project.name}
-              className="w-full h-[400px] object-cover rounded-lg"
+              className="rounded-lg aspect-ratio"
             />
           )}
 

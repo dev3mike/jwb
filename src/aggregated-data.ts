@@ -14,19 +14,9 @@ export const data = {
   blog,
   workExperiences,
   skills: {
-    top: [
-      "Go",
-      "Node.js",
-      "Next.js",
-      "React",
-      "Typescript",
-      "Postgres",
-      "MongoDB",
-      "Redis",
-    ],
+    top: profile.top_skills,
   },
   about: {
-    description:
-      "I am a software engineer with over 10 years of experience, skilled in all stages of software development, including analysis, design, coding, testing, and documentation. I have expertise in Go, C# (.Net Core), and JavaScript/TypeScript (Node.js, NestJs), along with experience in AI development(LLM, RAG, Agentic AI), and also good experience with React.js, Next.js, and databases like Postgres, MongoDB, and Redis. I am always eager to learn new skills and take on exciting challenges in the tech field.",
+    description: profile.about,
   },
 };
