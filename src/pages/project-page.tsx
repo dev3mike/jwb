@@ -107,7 +107,7 @@ export function ProjectPage() {
               <div className="aspect-video p-2 rounded-lg overflow-hidden bg-black">
                 <iframe
                   src={`https://www.youtube.com/embed/${
-                    project.youtube_url.split("v=")[1]
+                    (project.youtube_url as string).split("v=")[1]
                   }`}
                   title={project.name}
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
