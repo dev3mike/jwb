@@ -49,7 +49,7 @@ export function ProjectsSection() {
                     </Link>
                   </div>
                 </div>
-                {!isMobile && (
+                {project.image && !isMobile && (
                   <div>
                     <img
                       src={project.image}

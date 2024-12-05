@@ -43,9 +43,12 @@ export function ProjectsPage() {
                       {project.name}
                     </h2>
                   </Link>
-                  <p className="text-sm text-muted-foreground line-clamp-4">
-                    {project.description}
-                  </p>
+                  <p
+                    className="text-sm text-muted-foreground line-clamp-4"
+                    dangerouslySetInnerHTML={{
+                      __html: project.description,
+                    }}
+                  />
                   <div className="flex gap-6 mt-4">
                     <Link
                       to={`/projects/${project.slug}`}
@@ -58,11 +61,13 @@ export function ProjectsPage() {
                 </div>
               </div>
               {project.image && !isMobile && (
-                <img
-                  src={project.image}
-                  alt={project.name}
-                  className="rounded-md w-[200px] h-[120px] object-cover"
-                />
+                <div>
+                  <img
+                    src={project.image}
+                    alt={project.name}
+                    className="rounded-md w-[200px] max-h-[150px]"
+                  />
+                </div>
               )}
             </div>
           ))}

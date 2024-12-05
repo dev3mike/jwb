@@ -5,12 +5,14 @@ import { useData } from "@/hooks/useData";
 import { Button } from "@/components/ui/button";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { Helmet } from "react-helmet";
+import { useMobile } from "@/hooks/useMobile";
 
 const POSTS_PER_PAGE = 20;
 
 export function BlogPage() {
   const data = useData();
   const [currentPage, setCurrentPage] = useState(1);
+  const isMobile = useMobile();
 
   const totalPages = Math.ceil(data.blog.posts.length / POSTS_PER_PAGE);
   const startIndex = (currentPage - 1) * POSTS_PER_PAGE;
@@ -51,12 +53,14 @@ export function BlogPage() {
                   <span>{post.date}</span>
                 </div>
               </div>
-              {post.image && (
-                <img
-                  src={post.image}
-                  alt={post.title}
-                  className="rounded-md w-[200px] h-[120px] object-cover"
-                />
+              {post.image && !isMobile && (
+                <div>
+                  <img
+                    src={post.image}
+                    alt={post.title}
+                    className="rounded-md w-[200px] max-h-[150px]"
+                  />
+                </div>
               )}
             </div>
           ))}

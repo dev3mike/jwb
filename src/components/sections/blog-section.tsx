@@ -18,7 +18,7 @@ export function BlogSection() {
         <CardContent className="p-4">
           <div className="border-b pb-4">
             <div className="grid grid-cols-1 gap-6">
-              {data.blog.posts.map((post, i) => (
+              {data.blog.posts.slice(0, 4).map((post, i) => (
                 <div key={i} className="flex gap-4">
                   <div className="flex-1">
                     <h2 className="text-lg font-bold hover:text-orange-500 dark:hover:text-orange-500">
@@ -39,7 +39,7 @@ export function BlogSection() {
                       <span>{post.date}</span>
                     </div>
                   </div>
-                  {!isMobile && (
+                  {post.image && !isMobile && (
                     <div>
                       <img
                         src={post.image}
